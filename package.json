@@ -1,0 +1,35 @@
+{
+  "name": "e-commerce-store",
+  "version": "1.0.0",
+  "description": "E Commerce Storen",
+  "main": "index.js",
+  "scripts": {
+    "build": "rm -rf build && tsc --project tsconfig.json && copyfiles public/** build/",
+    "dev": "npm run build && nodemon --watch '**/*.ts' --exec 'node' build/index.js --verbose",
+    "server:dev": "nodemon --watch '**/*.ts' --exec 'ts-node' index.ts --verbose",
+    "start": "node build/index.js",
+    "webpack": "webpack",
+    "test": "TZ=Asia/Ho_Chi_Minh jest",
+    "test:cov": "TZ=Asia/Ho_Chi_Minh jest --coverage",
+    "typecheck": "npx tsc --project tsconfig.json --noEmit --skipLibCheck",
+    "prettier": "prettier --single-quote --write '{src,settings}/**/*.{ts,js,json,tsx}'",
+    "lint": "npx tslint --project tsconfig.json --config tslint.json '{src,settings}/**/*.{ts,tsx}'",
+    "lint:fix": " npx tslint --project tsconfig.json -c tslint.json -p tslint-tsconfig.json '{src,settings}/**/*.{ts,tsx}' --fix --format verbose"
+  },
+  "engines": {
+    "node": "16.14.0",
+    "npm": "8.3.1"
+  },
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "parse-dashboard": "^4.0.1",
+    "parse-server": "^5.1.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/jest": "^27.4.1",
+    "@types/node": "^17.0.21",
+    "@types/parse": "^2.18.13",
+    "nodemon": "^2.0.15"
+  }
+}

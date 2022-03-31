@@ -1,0 +1,16 @@
+#form-login.invalid > .form-message {
+    color: red;
+}
+
+.form-message{
+    font-size: 0.8rem;
+    padding: 0 10px;
+}
+
+.form-group.invalid .form-control{
+    border-color: red;
+}
+
+.form-group.invalid .form-message{
+    color: red;
+}

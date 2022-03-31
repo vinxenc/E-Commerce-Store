@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "rm -rf build && tsc --project tsconfig.json && copyfiles public/** build/",
-    "dev": "npm run build && nodemon --watch '**/*.ts' --exec 'node' build/index.js --verbose",
+    "dev": "nodemon index.ts",
     "server:dev": "nodemon --watch '**/*.ts' --exec 'ts-node' index.ts --verbose",
     "start": "node build/index.js",
     "webpack": "webpack",

@@ -20,6 +20,9 @@
 		
 		<!-- FAVICON -->
 		<link href=<%= host + "admin/assets/img/favicon.png"; %> rel="shortcut icon" />
+
+		<!--Css Validate-->
+		<link rel="stylesheet" href=<%= host + "admin/assets/css/style.css";%> />
 	</head>
 	
 	<body class="sign-inup" id="body">
@@ -36,15 +39,17 @@
 						</div>
 						<div class="card-body p-5">
 							<h4 class="text-dark mb-5">Sign In</h4>
-							
-							<form action="/index.html">
+							<form action="/index.html" id="form-login" class="form-login">
+								<span class="form-message"></span>
 								<div class="row">
 									<div class="form-group col-md-12 mb-4">
-										<input type="email" class="form-control" id="email" placeholder="Username">
+										<input type="text" name="username" rules="required|space:Username|min:6" class="form-control" id="email" placeholder="Username">
+										<span class="form-message"></span>
 									</div>
 									
 									<div class="form-group col-md-12 ">
-										<input type="password" class="form-control" id="password" placeholder="Password">
+										<input type="password" name="password" rules="required|space:Password|min:6" class="form-control" id="password" placeholder="Password">
+										<span class="form-message"></span>
 									</div>
 									
 									<div class="col-md-12">
@@ -78,8 +83,21 @@
 		<script src=<%= host + "admin/assets/js/bootstrap.bundle.min.js"%>></script>
 		<script src=<%= host + "admin/assets/plugins/jquery-zoom/jquery.zoom.min.js"%>></script>
 		<script src=<%= host + "admin/assets/plugins/slick/slick.min.js"%>></script>
-	
+		
+		<!--Jquery-->
+		<script src=<%= host + "admin/assets/plugins/slick/slick.min.js"%>></script>
+
 		<!-- Ekka Custom -->	
 		<script src=<%= host +"admin/assets/js/ekka.js"%>></script>
+
+			<!--Form Javascript-->
+		<script src=<%= host +"admin/js/sign-in.js"%>></script>
+		<script src=<%= host +"admin/js/sign-in.jquery.js"%>></script>
+		<script>
+			var form = new Validator('#form-login');
+			form.onSubmit = function(data){
+				// console.log(data);
+			}
+		</script>
 	</body>
 </html>

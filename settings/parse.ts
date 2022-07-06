@@ -2,7 +2,7 @@ export const PARSE_SERVER_PROPERTY = {
     // Connection string for your MongoDB database
     databaseURI:
       process.env.DATABASE_URI ||
-      "mongodb+srv://vinxenc:LOlQIPufeRsg9kVG@cluster0.qbqjd.mongodb.net/myFirstDatabase?ssl=true&authSource=admin&retryWrites=true",
+      "mongodb+srv://vinxenc:UIt6ToQpUsfa9p03@cluster0.qbqjd.mongodb.net/myFirstDatabase?ssl=true&authSource=admin&retryWrites=true",
     appId: process.env.APP_ID || "myAppId",
     // Keep this key secret!
     masterKey: process.env.MASTER_KEY || "myMasterKey",

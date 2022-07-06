@@ -4,10 +4,11 @@
   "description": "E Commerce Storen",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf build && tsc --project tsconfig.json && copyfiles public/** build/",
+    "build": "rm -rf build && tsc --project tsconfig.json && npx copyfiles -a public/**/*.css public/**/*.js build/ --require-approval never",
     "dev": "npm run build && nodemon --watch '**/*.ts' --exec 'node' build/index.js --verbose",
     "server:dev": "nodemon --watch '**/*.ts' --exec 'ts-node' index.ts --verbose",
     "start": "node build/index.js",
+    "postinstall": "npm run build",
     "webpack": "webpack",
     "test": "TZ=Asia/Ho_Chi_Minh jest",
     "test:cov": "TZ=Asia/Ho_Chi_Minh jest --coverage",
@@ -23,7 +24,8 @@
   "dependencies": {
     "ejs": "^3.1.6",
     "parse-dashboard": "^4.0.1",
-    "parse-server": "^5.1.1"
+    "parse-server": "^5.1.1",
+    "copyfiles": "2.4.1"
   },
   "devDependencies": {
     "@types/express": "^4.17.13",

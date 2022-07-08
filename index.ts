@@ -1,4 +1,5 @@
 import * as express from 'express';
+import * as cors from 'cors';
 import * as ParseDashboard from 'parse-dashboard';
 import { ParseServer } from 'parse-server';
 import * as path from 'path';
@@ -10,18 +11,26 @@ import {
 import { adminRouter } from './router/admin';
 
 global.host = process.env.HOST || 'http://localhost:1337/';
-
+const corsOptions = {
+    methods: ['GET', 'PUT', 'POST', 'PATCH', 'DELETE', 'OPTIONS'],
+    credential: true,
+    preflightContinue: false,
+    origin: '*',
+    optionsSuccessStatus: 204
+}
 const app = express();
-
+app.use(cors(corsOptions));
+app.use(express.json({ limit: '1mb' }));
+app.use(express.urlencoded({ limit: '1mb', extended: true }));
 // set the view engine to ejs
 app.set('view engine', 'ejs');
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/images', express.static(path.join(__dirname, 'public/images')));
 
-// app.get('/', function (_: express.Request, res: express.Response) {
-//     res.send('Permission denied')
-// })
+app.get('/', function (_: express.Request, res: express.Response) {
+    res.send('Permission denied')
+})
 
 const api = new ParseServer(PARSE_SERVER_PROPERTY);
 const dashboard = new ParseDashboard(

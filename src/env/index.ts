@@ -4,7 +4,7 @@ dotenv.config();
 
 export const env = cleanEnv(process.env, {
   NODE_ENV: str({ choices: ['development', 'test', 'production', 'staging'] }),
-	PORT: num(),
+  PORT: num(),
   DATABASE_URI: str(),
   SERVER_APP_ID: str(),
   SERVER_MASTER_KEY: str(),
@@ -14,6 +14,6 @@ export const env = cleanEnv(process.env, {
   DASHBOARD_PASSWORD: str(),
   DASHBOARD_TRUST_PROXY: num(),
   DASHBOARD_ENCRYPTED: bool(),
-	DASHBOARD_INSECURE_HTTP: bool(),
+  DASHBOARD_INSECURE_HTTP: bool(),
   DASHBOARD_COOKIE_SESSION_SECRET: str(),
 });

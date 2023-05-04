@@ -105,3 +105,8 @@ dist
 
 #build
 build
+
+# JS file
+*.js
+*.map
+*.d.ts

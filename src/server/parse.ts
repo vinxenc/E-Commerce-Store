@@ -1,19 +1,19 @@
-import { env } from '../../env';
+import { env } from '../env';
 
 export const SERVER_PROPERTY = {
   databaseURI: env.DATABASE_URI,
-  appId      : env.SERVER_APP_ID,
-  masterKey  : env.SERVER_MASTER_KEY,
-  serverURL  : env.SERVER_URL,
+  appId: env.SERVER_APP_ID,
+  masterKey: env.SERVER_MASTER_KEY,
+  serverURL: env.SERVER_URL,
 };
 
 export const DASHBOARD_PROPERTY = {
   apps: [
     {
       serverURL: env.SERVER_URL,
-      appId    : env.SERVER_APP_ID,
+      appId: env.SERVER_APP_ID,
       masterKey: env.SERVER_MASTER_KEY,
-      appName  : env.SERVER_APP_NAME,
+      appName: env.SERVER_APP_NAME,
     },
   ],
   users: [

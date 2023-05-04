@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "rootDir": "./",
+    "baseUrl": "./",
     "target": "es6",
     "lib": ["es2017", "dom"],
     "module": "commonjs",
@@ -12,7 +14,6 @@
     "noUnusedLocals": true,
     "strictFunctionTypes": true,
     "suppressImplicitAnyIndexErrors": true,
-    "outDir": "./build/",
     "strict": true,
     "sourceMap": true,
     "inlineSources": true,
@@ -29,6 +30,6 @@
     "jsx": "react"
   },
   "files": ["./node_modules/@types/node/index.d.ts"],
-  "include": ["src/index.tsx", "src/**/**/*.{ts,tsx}", "index.ts"],
+  "include": ["src/", "index.ts"],
   "exclude": ["node_modules"]
 }

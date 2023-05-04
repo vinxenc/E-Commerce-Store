@@ -1,37 +1,42 @@
 {
-  "name": "e-commerce-store",
+  "name": "affiliate-store",
   "version": "1.0.0",
-  "description": "E Commerce Storen",
+  "description": "Affiliate Store",
   "main": "index.js",
   "scripts": {
     "build": "rm -rf build && tsc --project tsconfig.json && npx copyfiles -a public/**/*.css public/**/*.js build/ --require-approval never",
     "dev": "npm run build && nodemon --watch '**/*.ts' --exec 'node' build/index.js --verbose",
     "server:dev": "nodemon --watch '**/*.ts' --exec 'ts-node' index.ts --verbose",
     "start": "node build/index.js",
-    "postinstall": "npm run build",
     "webpack": "webpack",
     "test": "TZ=Asia/Ho_Chi_Minh jest",
     "test:cov": "TZ=Asia/Ho_Chi_Minh jest --coverage",
     "typecheck": "npx tsc --project tsconfig.json --noEmit --skipLibCheck",
     "prettier": "prettier --single-quote --write '{src,settings}/**/*.{ts,js,json,tsx}'",
     "lint": "npx tslint --project tsconfig.json --config tslint.json '{src,settings}/**/*.{ts,tsx}'",
-    "lint:fix": " npx tslint --project tsconfig.json -c tslint.json -p tslint-tsconfig.json '{src,settings}/**/*.{ts,tsx}' --fix --format verbose"
+    "lint:fix": " npx tslint --project tsconfig.json -c tslint.json -p tslint-tsconfig.json '{src,settings}/**/*.{ts,tsx}' --fix --format verbose",
+    "prepare": "husky install"
   },
   "engines": {
-    "node": "16.14.0",
+    "node": "16.x.0",
     "npm": "8.3.1"
   },
   "dependencies": {
+    "copyfiles": "2.4.1",
+    "dotenv": "16.0.3",
     "ejs": "^3.1.6",
+    "envalid": "7.3.1",
     "parse-dashboard": "^4.0.1",
-    "parse-server": "^5.1.1",
-    "copyfiles": "2.4.1"
+    "parse-server": "^5.1.1"
   },
   "devDependencies": {
-    "@types/express": "^4.17.13",
+    "@types/express": "4.17.17",
     "@types/jest": "^27.4.1",
-    "@types/node": "^17.0.21",
-    "@types/parse": "^2.18.13",
-    "nodemon": "^2.0.15"
+    "@types/node": "18.16.3",
+    "@types/parse": "3.0.4",
+    "jest": "29.5.0",
+    "husky": "8.0.3",
+    "nodemon": "^2.0.15",
+    "prettier": "2.8.8"
   }
 }

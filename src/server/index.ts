@@ -1,14 +1,17 @@
 import * as express from 'express';
 import * as cors from 'cors';
 import * as ParseDashboard from 'parse-dashboard';
-import { ParseServer } from 'parse-server';
 import * as path from 'path';
+import * as createError from 'http-errors';
+import * as root from 'app-root-path';
+
+import { ParseServer } from 'parse-server';
 import {
   DASHBOARD_OPTIONS,
   DASHBOARD_PROPERTY,
   SERVER_PROPERTY,
 } from './parse';
-import { env } from '../../env';
+import { router as signUp } from './page/signUp';
 
 const corsOptions = {
   methods: ['GET', 'PUT', 'POST', 'PATCH', 'DELETE', 'OPTIONS'],
@@ -24,12 +27,12 @@ app.use(express.urlencoded({ limit: '1mb', extended: true }));
 // set the view engine to ejs
 app.set('view engine', 'ejs');
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(root.path, 'public')));
 
 app.get('/', function (_: express.Request, res: express.Response) {
   res.send('Permission denied');
 });
-  
+
 const api = new ParseServer(SERVER_PROPERTY);
 const dashboard = new ParseDashboard(DASHBOARD_PROPERTY, DASHBOARD_OPTIONS);
 
@@ -39,7 +42,11 @@ app.use('/api', api);
 // make the Parse Dashboard available at /dashboard
 app.use('/dashboard', dashboard);
 
-app.listen(env.PORT || 1337, () => {
-	// tslint:disable-next-line
-	console.log('server running on port 1337.');
-});
+app.use('/sign-up', signUp);
+
+app.use(
+  (_req: express.Request, _res: express.Response, next: express.NextFunction) =>
+    next(createError(404))
+);
+
+export default app;

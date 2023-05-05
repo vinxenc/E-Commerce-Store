@@ -5,6 +5,4 @@ const router = Router();
 
 router.get('/', getSignUpPage);
 
-export {
-    router,
-};
+export { router };

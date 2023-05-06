@@ -13,5 +13,5 @@ rootDom.render(
     <RecoilRoot>
       <App />
     </RecoilRoot>
-  </React.StrictMode>
+  </React.StrictMode>,
 );

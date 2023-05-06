@@ -33,8 +33,8 @@ app.use(
       '-',
       tokens['response-time'](req, res),
       'ms',
-    ].join(' ')
-  )
+    ].join(' '),
+  ),
 );
 
 app.use(cors(corsOptions));
@@ -54,7 +54,7 @@ const api = new ParseServer(SERVER_PROPERTY) as express.RequestHandler;
 // eslint-disable-next-line @typescript-eslint/no-unsafe-call
 const dashboard = new ParseDashboard(
   DASHBOARD_PROPERTY,
-  DASHBOARD_OPTIONS
+  DASHBOARD_OPTIONS,
 ) as express.RequestHandler;
 
 // Serve the Parse API on the /parse URL prefix
@@ -67,7 +67,7 @@ app.use('/sign-up', signUp);
 
 app.use(
   (_req: express.Request, _res: express.Response, next: express.NextFunction) =>
-    next(createError(404))
+    next(createError(404)),
 );
 
 export default app;

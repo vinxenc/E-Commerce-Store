@@ -4,3 +4,4 @@
 yarn prettier --write .
 yarn run lint
 yarn run test:cov
+git add .

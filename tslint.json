@@ -1,17 +1,12 @@
 {
   "defaultSeverity": "error",
-  "extends": [
-    "tslint:recommended",
-    "tslint-config-airbnb",
-    "tslint-config-prettier",
-    "tslint:latest",
-    "tslint-react"
-  ],
   "jsRules": {},
   "linterOptions": {
     "exclude": ["node_modules/**/*.ts", "coverage/lcov-report/*.js"]
   },
   "rules": {
+    "semicolon": [true, "always"],
+    "no-any": true,
     "jsx-wrap-multiline": false,
     "jsx-no-lambda": false,
     "prefer-array-literal": false,
@@ -40,7 +35,7 @@
     "cyclomatic-complexity": [true, 30],
     "max-file-line-count": [true, 1350],
     "prefer-const": true,
-    "newline-before-return": true,
+    "newline-before-return": false,
     "prefer-method-signature": true,
     "no-return-await": true,
     "prefer-conditional-expression": true,

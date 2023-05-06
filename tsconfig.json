@@ -30,6 +30,12 @@
     "jsx": "react"
   },
   "files": ["./node_modules/@types/node/index.d.ts"],
-  "include": ["src/", "index.ts"],
+  "include": [
+    "src/",
+    "index.ts",
+    "__tests__",
+    "vite.config.ts",
+    ".eslintrc.js"
+  ],
   "exclude": ["node_modules"]
 }

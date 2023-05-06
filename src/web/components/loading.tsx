@@ -1,9 +1,7 @@
 import * as React from 'react';
 
-export const Loading = () => {
-  return (
-    <div className="">
-      <div className="">Loading...</div>
-    </div>
-  );
-};
+export const Loading = () => (
+  <div className="">
+    <div className="">Loading...</div>
+  </div>
+);

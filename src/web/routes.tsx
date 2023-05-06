@@ -1,47 +1,3 @@
-// import * as React from 'react';
-// import * as Loadable from 'react-loadable';
-
-// import Loading from './components/loading';
-
-// const delay = 2000;
-// const timeout = 10000;
-
-// interface RouteLoadable {
-//   path: string;
-//   exact: boolean;
-//   name: string;
-//   component: React.ComponentType<unknown> & Loadable.LoadableComponent;
-// }
-
-// const LoadableDefaultOptions = {
-//   delay,
-//   timeout,
-// };
-// // Pages
-// const Home = Loadable({
-//   ...LoadableDefaultOptions,
-//   loader: () => import('./pages/home'),
-//   loading: Loading,
-// });
-// const Login = Loadable({
-//   ...LoadableDefaultOptions,
-//   loader: () => import('./pages/login'),
-//   loading: Loading,
-// });
-// const Error = Loadable({
-//   ...LoadableDefaultOptions,
-//   loader: () => import('./pages/error'),
-//   loading: Loading,
-// });
-
-// const routes: RouteLoadable[] = [
-//   { path: '/', exact: true, name: 'Home', component: Home },
-//   { path: '/login', exact: true, name: 'Login', component: Login },
-//   { path: '/error', exact: true, name: 'Error', component: Error },
-// ];
-
-// export default routes;
-
 import * as React from 'react';
 import {
   Outlet,
@@ -51,16 +7,14 @@ import {
 } from 'react-router-dom';
 import { Home } from './pages/home';
 
-const NoMatch = () => {
-  return (
-    <div>
-      <h2>Nothing to see here!</h2>
-      <p>
-        <Link to="/">Go to the home page</Link>
-      </p>
-    </div>
-  );
-};
+const NoMatch = () => (
+  <div>
+    <h2>Nothing to see here!</h2>
+    <p>
+      <Link to="/">Go to the home page</Link>
+    </p>
+  </div>
+);
 
 const Layout = () => {
   const navigation = useNavigation();

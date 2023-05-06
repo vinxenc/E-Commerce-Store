@@ -110,3 +110,4 @@ public
 *.js
 *.map
 *.d.ts
+!.eslintrc.js

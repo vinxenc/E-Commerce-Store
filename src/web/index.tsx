@@ -4,7 +4,11 @@ import ReactDOM from 'react-dom/client';
 
 import App from './app';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+// eslint-disable-next-line no-undef
+const rootElement = document.getElementById('root') as Element;
+const rootDom = ReactDOM.createRoot(rootElement);
+
+rootDom.render(
   <React.StrictMode>
     <RecoilRoot>
       <App />

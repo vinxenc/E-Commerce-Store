@@ -1,7 +1,7 @@
+import * as path from 'path';
 import * as express from 'express';
 import * as cors from 'cors';
 import * as ParseDashboard from 'parse-dashboard';
-import * as path from 'path';
 import * as createError from 'http-errors';
 import * as root from 'app-root-path';
 import * as morgan from 'morgan';
@@ -24,8 +24,8 @@ const corsOptions = {
 
 const app = express();
 app.use(
-  morgan((tokens, req, res) => {
-    return [
+  morgan((tokens, req, res) =>
+    [
       tokens.method(req, res),
       tokens.url(req, res),
       tokens.status(req, res),
@@ -33,9 +33,10 @@ app.use(
       '-',
       tokens['response-time'](req, res),
       'ms',
-    ].join(' ');
-  })
+    ].join(' ')
+  )
 );
+
 app.use(cors(corsOptions));
 app.use(express.json({ limit: '1mb' }));
 app.use(express.urlencoded({ limit: '1mb', extended: true }));
@@ -48,8 +49,13 @@ app.get('/', (_: express.Request, res: express.Response) => {
   res.send('Permission denied');
 });
 
-const api = new ParseServer(SERVER_PROPERTY);
-const dashboard = new ParseDashboard(DASHBOARD_PROPERTY, DASHBOARD_OPTIONS);
+// eslint-disable-next-line @typescript-eslint/no-unsafe-call
+const api = new ParseServer(SERVER_PROPERTY) as express.RequestHandler;
+// eslint-disable-next-line @typescript-eslint/no-unsafe-call
+const dashboard = new ParseDashboard(
+  DASHBOARD_PROPERTY,
+  DASHBOARD_OPTIONS
+) as express.RequestHandler;
 
 // Serve the Parse API on the /parse URL prefix
 app.use('/api', api);

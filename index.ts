@@ -10,10 +10,10 @@ import app from './src/server';
  * Normalize a port into a number, string, or false.
  */
 
-const normalizePort = (val) => {
+const normalizePort = (val: string) => {
   const portValue = parseInt(val, 10);
 
-  if (isNaN(portValue)) {
+  if (Number.isNaN(portValue)) {
     // named pipe
     return val;
   }
@@ -31,13 +31,16 @@ const normalizePort = (val) => {
  */
 
 const onError = (error) => {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
   if (error.syscall !== 'listen') {
     throw error;
   }
 
-  const bind = typeof port === 'string' ? `Pipe ${port}` : `Port ${port}`;
+  const bind =
+    typeof port === 'string' ? `Pipe ${port}` : `Port ${port.toString()}`;
 
   // handle specific listen errors with friendly messages
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
   switch (error.code) {
     case 'EACCES':
       console.error(`${bind} requires elevated privileges`);

@@ -1,5 +1,6 @@
 import * as dotenv from 'dotenv';
 import { cleanEnv, str, bool, num } from 'envalid';
+
 dotenv.config();
 
 export const env = cleanEnv(process.env, {

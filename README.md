@@ -1,4 +1,4 @@
-# lime
+# Store
 
 Ecommerce Application
 
@@ -6,6 +6,16 @@ Ecommerce Application
 
 OKumUR3Wuti9fypiyP2B2Wkz9DPaH1Y3
 
-- [x] Init repository
-- [x] Init source Nodejs
-- [x] Apply TS
+# BE local
+
+- create file .env
+- update env like src/env
+- yarn install
+- yarn run server:dev
+
+# FE local
+
+- create file .env
+- update env like src/env
+- yarn install
+- web:dev

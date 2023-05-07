@@ -104,9 +104,10 @@ dist
 .tern-port
 
 #build
-build
+public
 
 # JS file
 *.js
 *.map
 *.d.ts
+!.eslintrc.js

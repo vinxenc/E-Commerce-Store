@@ -4,20 +4,19 @@
   "description": "Affiliate Store",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf build && tsc --project tsconfig.json",
-    "dev": "npm run build && nodemon --watch '**/*.ts' --exec 'node' build/index.js --verbose",
+    "build": "yarn run server:build & yarn run web:build",
+    "server:build": "tsc --project tsconfig.json",
     "server:dev": "nodemon --watch '**/*.ts' --exec 'ts-node' index.ts --verbose",
-    "start": "node build/index.js",
-    "webpack": "webpack",
+    "web:dev": "vite",
+    "web:build": "vite build",
+    "start": "node index.js",
     "test": "TZ=Asia/Ho_Chi_Minh jest",
     "test:cov": "TZ=Asia/Ho_Chi_Minh jest --coverage",
     "typecheck": "npx tsc --project tsconfig.json --noEmit --skipLibCheck",
     "prettier": "prettier --single-quote --write 'src/**/*.{ts,js,json,tsx}'",
     "lint": "eslint . --ext .ts",
     "lint:fix": " eslint . --ext .ts --fix",
-    "prepare": "husky install",
-    "web:dev": "vite",
-    "web:build": "vite build"
+    "prepare": "husky install"
   },
   "engines": {
     "node": "18.x.0",

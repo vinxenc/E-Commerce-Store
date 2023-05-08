@@ -12,7 +12,6 @@ import {
   DASHBOARD_PROPERTY,
   SERVER_PROPERTY,
 } from './parse';
-import { router as signUp } from './page/signUp';
 
 const corsOptions = {
   methods: ['GET', 'PUT', 'POST', 'PATCH', 'DELETE', 'OPTIONS'],
@@ -62,8 +61,6 @@ app.use('/api', api);
 
 // make the Parse Dashboard available at /dashboard
 app.use('/dashboard', dashboard);
-
-app.use('/sign-up', signUp);
 
 app.use(
   (_req: express.Request, _res: express.Response, next: express.NextFunction) =>

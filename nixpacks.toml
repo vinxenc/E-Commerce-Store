@@ -6,10 +6,7 @@ nixPkgs = ['nodejs', 'yarn']
 cmds = ['yarn install']
 
 [phases.build]
-cmds = ['yarn run build']
-
-[phase.copy]
-cmds = ['cp -v packages/frontend/public packages/backend']
+cmds = ['yarn run build', 'cp -v packages/frontend/public packages/backend']
 
 [start]
 cmd = 'yarn run start'

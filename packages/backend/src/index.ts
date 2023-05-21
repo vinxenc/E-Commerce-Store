@@ -48,8 +48,14 @@ app.get('/', (_: express.Request, res: express.Response) => {
   res.send('Permission denied');
 });
 
-// eslint-disable-next-line @typescript-eslint/no-unsafe-call
-const api = new ParseServer(SERVER_PROPERTY) as express.RequestHandler;
+/** *************  Parse Server *****************************************************************************/
+
+// eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-assignment
+const server = new ParseServer(SERVER_PROPERTY);
+// eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
+await server.start();
+// eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+const api = server.app as express.RequestHandler;
 // eslint-disable-next-line @typescript-eslint/no-unsafe-call
 const dashboard = new ParseDashboard(
   DASHBOARD_PROPERTY,
@@ -61,6 +67,8 @@ app.use('/api', api);
 
 // make the Parse Dashboard available at /dashboard
 app.use('/dashboard', dashboard);
+
+/** *************  Parse Server *****************************************************************************/
 
 app.use(
   (_req: express.Request, _res: express.Response, next: express.NextFunction) =>

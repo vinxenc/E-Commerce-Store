@@ -7,11 +7,7 @@ cmds = ['yarn install']
 
 [phases.buildfrontend]
 cmds = ['yarn run frontend:build']
-dependsOn = ['install']
-
-[phases.buildbackend]
-cmds = ['yarn run backend:build']
-dependsOn = ['buildfrontend']
+dependsOn = ['build']
 
 [start]
 cmd = 'yarn run start'

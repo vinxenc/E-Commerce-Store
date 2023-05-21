@@ -14,7 +14,7 @@
   },
   "packageManager": "yarn@3.2.1",
   "scripts": {
-    "start": "node index.js",
+    "start": "npm --prefix packages/backend run start",
     "test": "jest",
     "test:cov": "jest --coverage",
     "typecheck": "npx tsc --project tsconfig.json --noEmit --skipLibCheck",

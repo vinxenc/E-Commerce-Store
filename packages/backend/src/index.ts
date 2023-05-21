@@ -46,7 +46,7 @@ app.use(express.urlencoded({ limit: '1mb', extended: true }));
 
 console.log('root', path.join(root.path, 'public'));
 console.log('dirname', path.join(dirname, 'public'));
-app.use(express.static(path.join(root.path, 'public')));
+app.use(express.static(path.join(dirname, 'public')));
 
 // app.get('/', (_: express.Request, res: express.Response) => {
 //   res.send('Permission denied');

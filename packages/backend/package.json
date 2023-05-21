@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "esbuild index.ts --bundle --platform=node --packages=external --outfile=index.js",
+    "build": "esbuild index.ts --bundle --platform=node --packages=external --format=esm --outfile=index.js",
     "local": "nodemon --watch '**/*.ts' --exec 'ts-node' index.ts --verbose",
     "start": "node index.js"
   },
@@ -18,8 +19,8 @@
     "dotenv": "16.0.3",
     "ejs": "^3.1.6",
     "envalid": "7.3.1",
-    "parse-dashboard": "^4.0.1",
-    "parse-server": "^5.1.1",
+    "parse-dashboard": "5.1.0",
+    "parse-server": "6.2.0",
     "http-errors": "2.0.0"
   },
   "devDependencies": {

@@ -2,9 +2,9 @@
   "compilerOptions": {
     "rootDir": "./",
     "baseUrl": "./",
-    "target": "es6",
-    "lib": ["es2017", "dom"],
-    "module": "commonjs",
+    "target": "ESNext",
+    "lib": ["ESNext", "dom"],
+    "module": "ESNext",
     "moduleResolution": "node",
     "noEmitHelpers": true,
     "noImplicitReturns": true,

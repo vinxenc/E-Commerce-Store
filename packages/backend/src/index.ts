@@ -5,13 +5,17 @@ import ParseDashboard from 'parse-dashboard';
 import createError from 'http-errors';
 import root from 'app-root-path';
 import morgan from 'morgan';
-
+import { fileURLToPath } from 'url';
 import { ParseServer } from 'parse-server';
 import {
   DASHBOARD_OPTIONS,
   DASHBOARD_PROPERTY,
   SERVER_PROPERTY,
 } from './parse';
+
+const filename = fileURLToPath(import.meta.url);
+
+const dirname = path.dirname(filename);
 
 const corsOptions = {
   methods: ['GET', 'PUT', 'POST', 'PATCH', 'DELETE', 'OPTIONS'],
@@ -41,7 +45,7 @@ app.use(express.json({ limit: '1mb' }));
 app.use(express.urlencoded({ limit: '1mb', extended: true }));
 
 console.log(path.join(root.path, 'public'));
-console.log(path.join(__dirname, 'public'));
+console.log(path.join(dirname, 'public'));
 app.use(express.static(path.join(root.path, 'public')));
 
 // app.get('/', (_: express.Request, res: express.Response) => {

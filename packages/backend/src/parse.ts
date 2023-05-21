@@ -1,4 +1,4 @@
-import { env } from '../env';
+import { env } from './env';
 
 export const SERVER_PROPERTY = {
   databaseURI: env.DATABASE_URI,

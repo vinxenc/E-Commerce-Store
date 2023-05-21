@@ -12,6 +12,9 @@
       "**"
     ]
   },
+  "installConfig": {
+    "hoistingLimits": "packages"
+  },
   "packageManager": "yarn@3.2.1",
   "scripts": {
     "start": "npm --prefix packages/backend run start",

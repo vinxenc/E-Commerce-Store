@@ -8,5 +8,9 @@ cmds = ['yarn install']
 [phases.build]
 cmds = ['yarn run build']
 
+[phases.postbuild]
+cmds = ['cd packages/backend && ls']
+dependsOn = ['build']
+
 [start]
 cmd = 'yarn run start'

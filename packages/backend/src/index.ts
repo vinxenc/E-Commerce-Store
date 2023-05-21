@@ -39,8 +39,6 @@ app.use(
 app.use(cors(corsOptions));
 app.use(express.json({ limit: '1mb' }));
 app.use(express.urlencoded({ limit: '1mb', extended: true }));
-// set the view engine to ejs
-app.set('view engine', 'ejs');
 
 app.use(express.static(path.join(root.path, 'public')));
 

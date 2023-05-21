@@ -17,7 +17,7 @@ export default defineConfig({
     react(),
   ],
   build: {
-    outDir: 'public',
+    outDir: '../backend/public',
     sourcemap: false,
     rollupOptions: {
       output: {

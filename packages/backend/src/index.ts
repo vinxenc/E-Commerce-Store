@@ -42,9 +42,9 @@ app.use(express.urlencoded({ limit: '1mb', extended: true }));
 
 app.use(express.static(path.join(root.path, 'public')));
 
-app.get('/', (_: express.Request, res: express.Response) => {
-  res.send('Permission denied');
-});
+// app.get('/', (_: express.Request, res: express.Response) => {
+//   res.send('Permission denied');
+// });
 
 /** *************  Parse Server *****************************************************************************/
 

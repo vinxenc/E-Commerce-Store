@@ -4,7 +4,7 @@ import { defineConfig } from 'vite';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  publicDir: '../../public',
+  publicDir: '../backend/public',
   plugins: [
     rollupReplace({
       preventAssignment: true,
@@ -17,7 +17,7 @@ export default defineConfig({
     react(),
   ],
   build: {
-    outDir: 'public',
+    outDir: '../backend/public',
     sourcemap: false,
     rollupOptions: {
       output: {

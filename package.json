@@ -24,7 +24,7 @@
     "prepare": "husky install",
     "backend:build": "npm --prefix packages/backend run build",
     "frontend:build": "npm --prefix packages/frontend run build",
-    "build": "yarn run backend:build & yarn run frontend:build & cp -v packages/frontend/public packages/backend"
+    "build": "yarn run frontend:build && yarn run backend:build"
   },
   "engines": {
     "node": "18.x.0",

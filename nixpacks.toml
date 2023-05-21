@@ -2,9 +2,6 @@
 [phases.setup]
 nixPkgs = ['nodejs', 'yarn']
 
-[phases.setup]
-nixPkgs = ['...', 'cowsay']
-
 [phases.install]
 cmds = ['yarn install']
 
@@ -13,3 +10,4 @@ cmds = ['yarn run build']
 
 [start]
 cmd = 'yarn run start'
+dependsOn = ['build']

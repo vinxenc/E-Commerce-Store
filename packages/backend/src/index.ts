@@ -3,7 +3,6 @@ import express from 'express';
 import cors from 'cors';
 import ParseDashboard from 'parse-dashboard';
 import createError from 'http-errors';
-import root from 'app-root-path';
 import morgan from 'morgan';
 import { fileURLToPath } from 'url';
 import { ParseServer } from 'parse-server';
@@ -44,8 +43,6 @@ app.use(cors(corsOptions));
 app.use(express.json({ limit: '1mb' }));
 app.use(express.urlencoded({ limit: '1mb', extended: true }));
 
-console.log('root', path.join(root.path, 'public'));
-console.log('dirname', path.join(dirname, 'public'));
 app.use(express.static(path.join(dirname, 'public')));
 
 // app.get('/', (_: express.Request, res: express.Response) => {

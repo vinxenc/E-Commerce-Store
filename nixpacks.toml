@@ -13,5 +13,5 @@ cmds = ['cd packages/backend/public && ls']
 dependsOn = ['build']
 
 [start]
-cmd = 'yarn run start && cd packages/backend/public && ls'
+cmd = 'cd packages/backend/public && ls yarn run start'
 dependsOn = ['build']

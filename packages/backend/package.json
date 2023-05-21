@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "esbuild index.ts --bundle --platform=node --packages=external --outfile=index.js",
-    "local": "nodemon --watch '**/*.ts' --exec 'ts-node' index.ts --verbose"
+    "local": "nodemon --watch '**/*.ts' --exec 'ts-node' index.ts --verbose",
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",

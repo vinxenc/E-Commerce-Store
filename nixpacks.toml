@@ -13,5 +13,5 @@ cmds = ['cd packages/backend/public && ls']
 dependsOn = ['build']
 
 [start]
-cmd = 'cd packages/backend/public && ls && node packages/backend/index.js'
+cmd = 'cd packages/backend/public && ls && cd ../ && node index.js'
 dependsOn = ['build']

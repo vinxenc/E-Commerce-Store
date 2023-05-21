@@ -1,10 +1,10 @@
-import * as path from 'path';
-import * as express from 'express';
-import * as cors from 'cors';
-import * as ParseDashboard from 'parse-dashboard';
-import * as createError from 'http-errors';
-import * as root from 'app-root-path';
-import * as morgan from 'morgan';
+import path from 'path';
+import express from 'express';
+import cors from 'cors';
+import ParseDashboard from 'parse-dashboard';
+import createError from 'http-errors';
+import root from 'app-root-path';
+import morgan from 'morgan';
 
 import { ParseServer } from 'parse-server';
 import {

@@ -5,8 +5,12 @@ nixPkgs = ['nodejs', 'yarn']
 [phases.install]
 cmds = ['yarn install']
 
-[phases.build]
-cmds = ['yarn run build']
+[phases.buildfrontend]
+cmds = ['yarn run frontend:build']
+
+[phases.buildbackend]
+cmds = ['yarn run backend:build']
+dependsOn = ['buildfrontend']
 
 [start]
 cmd = 'yarn run start'
